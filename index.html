@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Clipper</title>
+<meta name="description" content="A personal desktop tool that cuts long videos into vertical clips and uploads them to its operator's own TikTok account.">
+<style>
+ :root{--bg:#fff;--fg:#1a1a1a;--mut:#5a5a5a;--line:#e3e3e3;--accent:#0b63d6;--card:#fafafa}
+ @media (prefers-color-scheme:dark){:root{--bg:#141414;--fg:#ececec;--mut:#a3a3a3;--line:#2c2c2c;--accent:#6fa8ff;--card:#1c1c1c}}
+ body{background:var(--bg);color:var(--fg);font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,sans-serif;margin:0;padding:56px 16px}
+ main{max-width:720px;margin:0 auto}
+ h1{font-size:38px;line-height:1.1;margin:0 0 10px;letter-spacing:-.02em}
+ .tag{color:var(--mut);font-size:18px;margin:0 0 36px}
+ h2{font-size:19px;margin:36px 0 10px}
+ ol,ul{padding-left:22px}
+ a{color:var(--accent)}
+ .card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:16px 18px;margin:18px 0}
+ .card p{margin:0}
+ code{background:color-mix(in srgb,var(--fg) 8%,transparent);padding:1px 5px;border-radius:4px;font-size:14px}
+ footer{margin-top:52px;padding-top:18px;border-top:1px solid var(--line);color:var(--mut);font-size:14px}
+</style>
+</head>
+<body>
+<main>
+<h1>Clipper</h1>
+<p class="tag">A desktop tool that turns long videos into short vertical clips — and
+uploads them to its operator's own TikTok account.</p>
+
+<h2>What it does</h2>
+<ol>
+  <li>Takes a long video the operator has the right to use: a stream recording, a
+      podcast, or footage supplied by a brand campaign.</li>
+  <li>Transcribes it locally and scores it to find the moments worth cutting.</li>
+  <li>Renders each moment as a 1080×1920 vertical clip with burned-in captions, framed
+      on whoever is speaking.</li>
+  <li>Puts the best clips in a queue, with a caption for each one.</li>
+  <li>Uploads them to the operator's own TikTok account through TikTok's Content Posting
+      API, on a schedule the operator sets.</li>
+</ol>
+
+<div class="card">
+<p><strong>Single operator, single account.</strong> Clipper runs on one person's
+computer and posts to that same person's TikTok account, connected through TikTok's own
+authorization screen. It is not a hosted service and has no other users.</p>
+</div>
+
+<h2>How it connects to TikTok</h2>
+<p>The operator creates a TikTok developer app, authorizes it against their own account,
+and Clipper stores the resulting token locally. Uploads then go through the official
+Content Posting API. Clipper never automates the TikTok website or app, and never asks
+for a TikTok password — authorization happens entirely on TikTok's own pages.</p>
+
+<h2>Built on</h2>
+<ul>
+  <li>Python, run from the command line on macOS</li>
+  <li><code>yt-dlp</code> to fetch source video the operator links to</li>
+  <li>Whisper, running locally, for transcription and captions</li>
+  <li>ffmpeg and OpenCV for framing and rendering</li>
+  <li>TikTok's Content Posting API for uploading</li>
+</ul>
+
+<h2>Content rights</h2>
+<p>Clipper is used only on footage its operator is entitled to publish — their own
+recordings, or material licensed to them by a brand campaign. Where a clip is a paid
+partnership, it is declared as such in TikTok's commercial content settings and labelled
+in the caption.</p>
+
+<footer>
+ <a href="./privacy.html">Privacy Policy</a> ·
+ <a href="./terms.html">Terms of Service</a>
+</footer>
+</main>
+</body>
+</html>
