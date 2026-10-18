@@ -1,1 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Privacy Policy — Clipper</title>
+<style>
+ :root{--bg:#fff;--fg:#1a1a1a;--mut:#5a5a5a;--line:#e3e3e3;--accent:#0b63d6}
+ @media (prefers-color-scheme:dark){:root{--bg:#141414;--fg:#ececec;--mut:#a3a3a3;--line:#2c2c2c;--accent:#6fa8ff}}
+ body{background:var(--bg);color:var(--fg);font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,sans-serif;margin:0;padding:48px 16px}
+ main{max-width:720px;margin:0 auto}
+ h1{font-size:30px;line-height:1.2;margin:0 0 6px}
+ h2{font-size:19px;margin:34px 0 8px}
+ .meta{color:var(--mut);font-size:14px;margin-bottom:32px}
+ p,li{color:var(--fg)} ul{padding-left:22px}
+ a{color:var(--accent)}
+ table{border-collapse:collapse;width:100%;margin:12px 0;font-size:15px}
+ th,td{border:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top}
+ th{background:color-mix(in srgb,var(--fg) 6%,transparent)}
+ footer{margin-top:48px;padding-top:18px;border-top:1px solid var(--line);color:var(--mut);font-size:14px}
+</style>
+</head>
+<body>
+<main>
+<h1>Privacy Policy</h1>
+<p class="meta">Clipper · last updated 18 October 2026</p>
 
+<p>Clipper is a personal command-line tool that runs on its operator's own computer. It
+turns long videos into short vertical clips and uploads them to that same person's TikTok
+account. There is no Clipper server, no hosted service and no account to sign up for.
+This policy describes what the tool does with data on the machine it is installed on.</p>
+
+<h2>Who this covers</h2>
+<p>Clipper is operated by a single person for their own TikTok account. The only TikTok
+account involved is the operator's own, connected by the operator through TikTok's own
+authorization screen. Clipper does not act for anyone else and has no other users.</p>
+
+<h2>What is stored, and where</h2>
+<p>Everything below is written to the folder Clipper is installed in, on the operator's
+computer. None of it is transmitted anywhere except to TikTok, as described in the next
+section.</p>
+
+<table>
+<tr><th>Data</th><th>Why</th><th>Kept until</th></tr>
+<tr>
+  <td>TikTok access token, refresh token and <code>open_id</code></td>
+  <td>To upload videos to the operator's own TikTok account without signing in again</td>
+  <td>The operator deletes the file or revokes access in TikTok</td>
+</tr>
+<tr>
+  <td>TikTok app client key and client secret</td>
+  <td>To refresh the access token when it expires</td>
+  <td>The operator deletes the file</td>
+</tr>
+<tr>
+  <td>Video files the operator chose to clip, and the clips made from them</td>
+  <td>These are what gets uploaded</td>
+  <td>The operator deletes them</td>
+</tr>
+<tr>
+  <td>Clip captions, titles, scores, timestamps and upload results</td>
+  <td>To queue clips, order them and record which ones were sent</td>
+  <td>The operator deletes them</td>
+</tr>
+</table>
+
+<p>Token files are written with permissions that allow only the operator's own user
+account to read them.</p>
+
+<h2>What is sent to TikTok</h2>
+<p>When the operator queues a clip and it comes due, Clipper sends to TikTok's Content
+Posting API:</p>
+<ul>
+  <li>the video file itself;</li>
+  <li>the caption the operator wrote or approved, where the chosen route carries one;</li>
+  <li>the posting settings the operator selected, such as visibility and whether the
+      video is a paid partnership;</li>
+  <li>the access token that identifies the operator's own TikTok account.</li>
+</ul>
+<p>TikTok's handling of that content is governed by
+<a href="https://www.tiktok.com/legal/privacy-policy">TikTok's own privacy policy</a>.</p>
+
+<h2>What is not done</h2>
+<ul>
+  <li>No data is sold, rented or shared with any third party.</li>
+  <li>There is no analytics, telemetry, crash reporting or usage tracking of any kind.</li>
+  <li>No advertising network, data broker or tracking service is used.</li>
+  <li>No data about any person other than the operator is collected. Clipper does not
+      read followers, comments, messages, profiles or anyone else's content.</li>
+  <li>No cookies are set; this website is static and has no scripts.</li>
+</ul>
+
+<h2>Third parties Clipper talks to</h2>
+<p>Clipper contacts only the services the operator points it at:</p>
+<ul>
+  <li><strong>TikTok</strong>, to authorize the account and upload videos.</li>
+  <li><strong>The video host the operator supplies a link to</strong>, to download the
+      source footage the operator has rights to use.</li>
+  <li><strong>Anthropic</strong>, only if the operator supplies an API key, and only to
+      send a transcript so clip-worthy moments can be chosen. This is optional and off
+      unless a key is set.</li>
+</ul>
+
+<h2>Removing your data</h2>
+<p>To disconnect Clipper from TikTok, open TikTok, go to Settings and privacy → Security
+and permissions → Manage app permissions, and remove the app. To erase the stored
+credentials, delete <code>tiktok_auth.json</code> from the Clipper folder. To erase
+everything else, delete the Clipper folder.</p>
+
+<h2>Children</h2>
+<p>Clipper is not directed at children and is not intended for use by anyone under the
+minimum age of the platforms it connects to.</p>
+
+<h2>Changes</h2>
+<p>If this policy changes, the date at the top of this page changes with it.</p>
+
+<h2>Contact</h2>
+<p>Questions about this policy: <a href="mailto:J_mohamed28@yahoo.com">J_mohamed28@yahoo.com</a></p>
+
+
+<footer>Clipper · <a href="./index.html">About</a> · <a href="./terms.html">Terms of Service</a></footer>
+</main>
+</body>
+</html>
